@@ -1,0 +1,19 @@
+version: 0.1
+frontend:
+  phases:
+    install:
+      runtime-versions:
+        ruby: 2.6
+    preBuild:
+      commands:
+        - bundle install
+    build:
+      commands:
+        - JEKYLL_ENV=production bundle exec jekyll b
+  artifacts:
+    baseDirectory: _site
+    files:
+      - '**/*'
+  cache:
+    paths: []
+
